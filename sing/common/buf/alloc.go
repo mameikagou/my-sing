@@ -10,6 +10,8 @@ import (
 
 // 待阅读: 字节的sync.Pool, 性能优化的神器
 
+var DefaultAllocator = newDefaultAllocator()
+
 type Allocator interface {
 	Get(size int) []byte
 	Put(buf []byte) error
